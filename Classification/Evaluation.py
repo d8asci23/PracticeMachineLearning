@@ -55,11 +55,13 @@ def get_clf_eval(y_test, pred):
     accuracy = accuracy_score(y_test, pred)
     precision = precision_score(y_test, pred)
     recall = recall_score(y_test, pred)
+    roc_auc = roc_auc_score(y_test, pred)
 
     f1 = f1_score(y_test, pred)
-    print("Confusion Matrix")
+    print("Confusion Matris")
     print(confusion)
-    print("Accuracy: {}, Precision: {}, Recall: {}, f1: {}".format(accuracy, precision, recall, f1))
+    print("Accuracy: {0:.4f}, Precision: {1:.4f}, Recall: {2:.4f}, f1: {3:.4f}, AUC: {4:.4f}".format(accuracy, precision, recall, f1, roc_auc))
+
 
 # Trade-off between precision and recall
 from sklearn.preprocessing import Binarizer
